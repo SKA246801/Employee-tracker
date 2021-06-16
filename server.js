@@ -4,7 +4,6 @@ const db = require('./db/connection')
 const logo = require('asciiart-logo')
 const colors = require('colors')
 
-
 const start = () => {
     const logoText = logo({ name: "Employee Tracker", font: 'ANSI Shadow' }).render()
     console.log(logoText.green)
