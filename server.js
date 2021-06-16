@@ -3,7 +3,6 @@ const inquirer = require('inquirer')
 const db = require('./db/connection')
 const logo = require('asciiart-logo')
 const colors = require('colors')
-// const startEnd = require('./startEnd')
 
 
 const start = () => {
@@ -178,8 +177,6 @@ const updateEmployee = () => {
                       message: "What is the role id of the new position you are assigning this person?"
                     })
                     .then(response => {
-                        console.log(response.updatedRole)
-                        console.log(employeeChoice.id)
                       const sql = `UPDATE employees SET ? WHERE ?`
                       db.query(sql, [{ role_id: response.updatedRole }, { id: employeeChoice.id }])
                       end()
@@ -205,5 +202,3 @@ const end = () => {
 }
 
 start()
-
-
